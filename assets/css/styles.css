@@ -1,0 +1,19 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: auto;
+}
+
+header {
+  width: 100%;
+  background-color: #002b80;
+  text-align: center;
+  color: #e6ffe6;
+  padding: 25px;
+}
+
+.search-index {
+  
+  margin: 20px 35px;
+  padding: 10px;
+}
