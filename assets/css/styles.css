@@ -1,19 +1,92 @@
 * {
   box-sizing: border-box;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  margin: auto;
+  margin: 10px;
 }
 
 header {
   width: 100%;
-  background-color: #002b80;
+  background-image: linear-gradient(to right, #4b7db3, #002b80);
   text-align: center;
   color: #e6ffe6;
   padding: 25px;
 }
 
-.search-index {
-  
-  margin: 20px 35px;
-  padding: 10px;
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-gap:30px;
+}
+
+.grid-child {
+  list-style: none;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-content: flex-start;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  border-bottom: 2px solid rgba(80, 77, 77, 0.445);
+}
+
+.display-box {
+  height: max-content;
+}
+
+input {
+  font-size: 1rem;
+  font-style: italic;
+  line-height: 1.5;
+  padding: 12px 24px;
+  margin: 16px 0;
+  border-radius: 6px;
+  width: 100%
+}
+
+#search-btn {
+  padding: 12px 55px;
+  margin: 10px 0;
+  background-color: rgba(63, 132, 223, 0.678);
+  border-radius: 5px;
+  color: white;
+  width: 100%;
+}
+
+#results button {
+  padding: 12px;
+  width: 90%;
+  background-color: rgb(80, 72, 72);
+  color: white;
+}
+
+#current-weather{
+  padding: 10px 200px 20px 10px;
+  line-height: 1.8rem;
+  border-radius: 5px;
+}
+
+#five-forecast {
+  display: flex;
+}
+
+.safety {
+  background-color: green;
+}
+
+.alert {
+  background-color: yellow;
+}
+
+.warn {
+  background-color: orange;
+}
+
+.danger {
+  background-color: red;
+}
+
+.stay-inside {
+  background-color: purple;
 }
