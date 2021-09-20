@@ -1,4 +1,4 @@
-# Placeholder Weather Title
+# Placeholder Weather Dashboard Title
 ## A searchable weather resource that allows a user to find the current weather and 5-day forecasts for a given location. The app stores user search history for future reference
 
 * Presently, this app uses local storage to populate a search history below the text entry box and submit button.
