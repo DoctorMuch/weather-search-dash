@@ -1,5 +1,6 @@
 window.onload = function(){
   makeHistory(searchArray);
+  console.log("Load screen", searchArray);
 };
 
 let searchFormEl = document.getElementById("search-form");
@@ -16,17 +17,11 @@ let makeHistory = function(array){
     $(resultsEl)
       .append(`<button>${searchArray[i]}</button>`)
     }
-    // for (let i=0;i<array.length;i++){
-    //   let cityBtn = document.createElement("button");
-    //   cityBtn.textContent = array[i].value;
-    //   resultsEl.appendChild(cityBtn);
-    // }
   }
 };
 
-
-
 let searchHandler = function(event){
+  locationLoad(searchArray);
   event.preventDefault();
   let cityName = cityInputEl.value.trim();
 
@@ -34,7 +29,9 @@ let searchHandler = function(event){
     getLocationWeather(cityName);
     cityInputEl.value="";
     locationSave(cityName);
-    makeHistory(searchArray);
+    // 
+    $(resultsEl)
+      .append(`<button>${cityName}</button>`);
 
   } else {
     alert("Please enter a city name!");
@@ -107,6 +104,8 @@ const getLocationWeather = function(city){
   });
 };
 
+
+
 let locationSave = function(entry){
   console.log("This searchArray right before pushing data", searchArray)
   searchArray.push(entry);
@@ -114,7 +113,11 @@ let locationSave = function(entry){
 };
 
 let locationLoad = function(){
-  searchArray = JSON.parse(localStorage.getItem("city"));
+  if (searchArray){
+    searchArray = JSON.parse(localStorage.getItem("city"));
+  } else {
+    searchArray = [];
+  } 
   console.log(searchArray);
 };
 
